@@ -30,6 +30,7 @@ RUN apt-get install -y default-mysql-client
 
 # Install Composer and dependecies
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer install --no-ansi --no-dev --no-interaction --no-progress --optimize-autoloader --no-scripts
 
 # Create a php.ini and move it.
 COPY php.ini /usr/local/etc/php/php.ini
@@ -39,8 +40,9 @@ COPY . /var/www/
 
 # Open port 9000 and run php-fpm
 EXPOSE 9000
-
 COPY entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/entrypoint.sh
-RUN chmod -R 777 /var/www/storage/
+CMD bash -c "composer install"
+CMD bash -c "chmod +x /usr/local/bin/entrypoint.sh"
+CMD bash -c "chmod -R 777 /var/www/storage/"
+
 CMD ["entrypoint.sh"]
