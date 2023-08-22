@@ -6,4 +6,4 @@
 # Inicia php-fpm
 chmod -R 777 /var/www/storage/
 php-fpm
-cd
+cd /var/www/; composer install
