@@ -41,7 +41,7 @@ COPY . /var/www/
 # Open port 9000 and run php-fpm
 EXPOSE 9000
 COPY entrypoint.sh /usr/local/bin/
-CMD bash -c "composer install"
+CMD bash -c "cd /var/www/; composer install"
 CMD bash -c "chmod +x /usr/local/bin/entrypoint.sh"
 CMD bash -c "chmod -R 777 /var/www/storage/"
 

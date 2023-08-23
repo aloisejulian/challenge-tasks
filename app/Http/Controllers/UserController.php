@@ -41,7 +41,7 @@ class UserController extends Controller
 		$usersWhoPurchasedAllProducts = User::select('users.id', 'users.name', 'users.email')
 			->join('orders', 'users.id', '=', 'orders.user_id')
 			->groupBy('users.id')
-			->havingRaw('COUNT(DISTINCT orders.product_id) = ?', [Product::count()])
+			->havingRaw('COUNT(DISTINCT orders.product_id) = (select count(id) from products)')
 			->get();
 
 		return response()->json($usersWhoPurchasedAllProducts);

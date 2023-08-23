@@ -70,8 +70,13 @@ You can modify the NGINX configuration by editing the nginx/conf.d/app.conf file
    docker-compose exec app php artisan migrate
    ```
    2. Seed the database with initial data using the provided seeders:
-
    ```bash
+   You can run all seeders at once:
+   
+   docker-compose exec app php artisan db:seed
+   
+   Or run individual seeds:
+   
    docker-compose exec app php artisan db:seed --class=ProductsTableSeeder
    docker-compose exec app php artisan db:seed --class=UsersTableSeeder
    docker-compose exec app php artisan db:seed --class=OrdersTableSeeder
