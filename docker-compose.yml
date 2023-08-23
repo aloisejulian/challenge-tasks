@@ -33,7 +33,6 @@ services:
       - app-network
     volumes:
       - ./:/var/www
-
 networks:
   app-network:
     driver: bridge
