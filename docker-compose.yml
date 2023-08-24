@@ -29,6 +29,12 @@ services:
   app:
     build: .
     restart: unless-stopped
+    entrypoint: ./entrypoint.sh
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - server
     networks:
       - app-network
     volumes:

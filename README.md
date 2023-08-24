@@ -57,7 +57,7 @@ You can modify the NGINX configuration by editing the nginx/conf.d/app.conf file
 2. Start the containers in the background:
 
    ```bash
-   docker-compose up -d
+   docker-compose up
    ```
 
 3. Access the Laravel application in your browser at `http://localhost:90`. 
