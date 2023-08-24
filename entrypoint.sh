@@ -2,5 +2,5 @@
 
 chmod -R 777 /var/www/storage/
 chmod -R 777 /var/www/bootstrap/
-cd /var/www; composer install;  php artisan migrate;
+cd /var/www; composer install;
 php-fpm
