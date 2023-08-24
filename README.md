@@ -60,9 +60,9 @@ You can modify the NGINX configuration by editing the nginx/conf.d/app.conf file
    docker-compose up
    ```
 
-3. Access the Laravel application in your browser at `http://localhost:90`. 
+3. Access the Laravel application in your browser at `http://localhost:90` and available endpoints. 
 
-
+Step 4 is only if database is erased, because databases will be seeded on docker up.
 4. Running Migrations and Seeders
    1. Run migrations to create the necessary database tables:
 
